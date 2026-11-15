@@ -1,7 +1,7 @@
 [project]
 name = "python-foundations"
 version = "0.1.0"
-description = "Add your description here"
+description = "Python foundations for my ML engineering path"
 readme = "README.md"
 authors = [
     { name = "Hilton Chiveto", email = "344393984+hilton-eng@users.noreply.github.com" }
