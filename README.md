@@ -30,11 +30,11 @@ uv.lock           # exact pinned versions
 ### Lesson 1: names, references and mutability
 
 **What I learned**
-- A variable is a label on an object, not a box. `b = a` adds a second label; nothing is copied.
-- Rebinding (`a = [9]`) moves one label; mutating (`a.append(9)`) changes the shared object, so every label sees it.
+- A variable is a label on an object, not a box. `b = a` adds a second label to the object a references; nothing is copied.
+- Rebinding (`a = [9]`) moves one label to a new object; mutating (`a.append(9)`) changes the original shared object, so every label sees it.
 - Mutable defaults (`def f(x, acc=[])`) are created once and shared between calls; the fix is `acc=None`.
-- Shallow vs deep copy: copy exactly what you change, for example a new dict per row rather than a deep copy of everything.
-- Data-cleaning functions should return new objects and never mutate their input, and a test should prove the input is unchanged.
+- Shallow vs deep copy: remember shallow copies still reference the objects in the original, a deep copy is independent.
+- Data-cleaning functions should return new objects and never mutate their input, a test should prove the input is unchanged.
 
 **Exercises**
 
