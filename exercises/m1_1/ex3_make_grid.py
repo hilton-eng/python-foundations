@@ -12,26 +12,32 @@ def make_grid(rows, cols, fill):
     grid = []
     for _ in range(rows):
         row = []
-        grid.append(row)
-        for col in range(cols):
+        for _ in range(cols):
             row.append(fill)
+        grid.append(row)
     return grid
 
 def test_changes_link_to_one_cell():
     new_grid = make_grid(2,2,0)
     new_grid[0][0] = 5
-    assert new_grid[0][0] != new_grid[1][0]
+    assert new_grid == [[5,0], [0, 0]]
 
 def test_correct_rows():
     rows = 2
     cols = 2
     fill = 0
-    new_grid = make_grid(2,2,0)
-    assert len(new_grid) == rows
+    new_grid = make_grid(rows,cols,fill)
+    assert new_grid == [[0,0], [0, 0]]
 
 test_changes_link_to_one_cell()
 test_correct_rows()
 print("all tests passed")
+
+# make_grid(2,2,[]) followed by [0][0].append(1) results in [[[], []], [[], []]]
+# an 2x2 grid with cells of empty lists, appending replaces all of the cells with 1 --> [[[1], [1]], [[1], [1]]] 
+# this occurs because lists are mutable and the they empty cells refer to the same object
+
+
 
 
 
