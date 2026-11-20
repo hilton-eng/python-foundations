@@ -1,11 +1,8 @@
-"""Exercise 1: avoid the mutable default trap."""
-
+"""Exercise 1: avoid the mutable default trap.
+Append item to items and return the list.
+If items is not given, start from a new empty list on every call."""
 
 def safe_append(item, items=None):
-       """Append item to items and return the list.
-
-    If items is not given, start from a new empty list on every call.
-    """
     if items is None:
         items = []
     items.append(item)

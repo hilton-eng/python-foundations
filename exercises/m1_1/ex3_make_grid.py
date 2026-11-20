@@ -34,8 +34,9 @@ test_correct_rows()
 print("all tests passed")
 
 # make_grid(2,2,[]) followed by [0][0].append(1) results in [[[], []], [[], []]]
-# an 2x2 grid with cells of empty lists, appending replaces all of the cells with 1 --> [[[1], [1]], [[1], [1]]] 
-# this occurs because lists are mutable and the they empty cells refer to the same object
+# an 2x2 grid with cells of empty lists, appending points all 4 of cells at 1 --> [[[1], [1]], [[1], [1]]] 
+# this occurs because lists are mutable and the they empty cells refer to the same object.
+# Is it correct? yes by the spec, because the rows are independent, but the cells share fill.
 
 
 

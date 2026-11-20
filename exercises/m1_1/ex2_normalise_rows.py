@@ -43,7 +43,7 @@ def test_returns_new_dicts():
     rows = [{" Name ": " Ada ", "AGE": 36}]
     output_rows = normalise_rows(rows) 
     assert len(rows) == len(output_rows), "Output rows must match length of input rows"
-    for in_row, out_row in zip((rows, output_rows)):
+    for in_row, out_row in zip(rows, output_rows):
         assert in_row is not out_row, "Output dict must be a new object, not the input dict"
 
 
